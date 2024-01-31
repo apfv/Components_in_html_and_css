@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Carousel Component</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /*
+     برای فاصله
+    SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 
+    / 32 / 48 / 64 / 80 / 96 / 128
+
+    برای سیایز فونت
+    FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+    */
+
+
+    /* 
+    Mine Color : #087f5b
+    Grey Color : #343a40 
+    */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #343a40;
+    }
+
+    .carousel {
+      width: 800px;
+      margin: 100px auto;
+      background-color: #087f5b;
+      border-radius: 8px;
+      /* padding: 32px; */
+      /* padding-right: 48px; */
+      /* padding-left: 86px; */
+
+      padding: 32px 48px 32px 86px;
+
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      gap: 80px;
+
+      position: relative;
+    }
+
+    img {
+      height: 200px;
+      width: 200px;
+      border-radius: 8px;
+
+
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+
+      /* رشت دادن عکس */
+      transform: scale(1.5);
+    }
+
+    .testimonial-text {
+      font-size: 18px;
+      font-weight: 500px;
+      line-height: 1.5;
+      margin-bottom: 32px;
+      color: #e6fcf5;
+    }
+
+    .testimonial-author {
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #c3fee8;
+    }
+
+    .testimonial-job {
+      font-size: 12px;
+      color: #c3fee8;
+    }
+
+    .btn {
+      stroke: #087f5b;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+
+      box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+
+      position: absolute;
+
+      /* برهی دست شدن موس */
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn--right {
+      /* روش خودم برای وسط گذاشتن فلش */
+      top: auto;
+      bottom: auto;
+      right: -20px;
+    }
+
+    .btn--left {
+      /* روش جوناس برای وسط گذاشتن فلش */
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      /*  مال خود باتن      X    Y  */
+    }
+
+    .dots {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+
+      position: absolute;
+
+      /* جابه جایی نقطه ها با روش جوناس */
+      left: 50%;
+      top: 100%;
+      transform: translate(-50%, 150%);
+    }
+
+    .dot {
+      color: #fff;
+      background-color: #fff;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #087f5b;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot--fill {
+      background-color: #087f5b;
+    }
+
+    ::selection {
+      color: #087f5b;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="carousel">
+    <img src="maria.jpg" alt="img-maria" />
+    <blockquote class="testimonial">
+      <p class="testimonial-text">
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia nesciunt aliquid ex atque quibusdam. Rerum
+        officia unde suscipit quo sunt hic illo fugit."
+      </p>
+      <p class="testimonial-author">
+        Maria de Almeida
+      </p>
+      <p class="testimonial-job">
+        Senior Product Manager at EDP Comercial
+      </p>
+    </blockquote>
+    <button class="btn btn--left">
+      <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+    <button class="btn btn--right">
+      <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+    <div class="dots">
+      <button class="dot dot--fill">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
+    </div>
+  </div>
+</body>
+
+</html>
